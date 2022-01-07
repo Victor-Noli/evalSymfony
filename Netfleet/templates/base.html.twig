@@ -1,10 +1,26 @@
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <title>Netfleet</title>
-            <h1> Bienvenue sur Netfleet !</h1>
-    </head>
-    <body>
-            <h2>Lorem ipsum dolor sit amet!</h2>
-    </body>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Welcome!{% endblock %}</title>
+    {# Run `composer require symfony/webpack-encore-bundle`
+           and uncomment the following Encore helpers to start using Symfony UX #}
+    {% block stylesheets %}
+        {#{{ encore_entry_link_tags('app') }}#}
+    {% endblock %}
+
+    {% block javascripts %}
+        {#{{ encore_entry_script_tags('app') }}#}
+    {% endblock %}
+</head>
+<body>
+{% block body %}
+ <h1> Bienvenue sur Netfleet ! </h1>
+
+ <a href="{{ path('film') }}">Voir l'ensemble des films</a>
+
+
+
+{% endblock %}
+</body>
 </html>

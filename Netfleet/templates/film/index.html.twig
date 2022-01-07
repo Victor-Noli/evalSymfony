@@ -1,20 +1,26 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello FilmController!{% endblock %}
+{% block title %}Tous les films{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
+    <style>
+        .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+        .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+    </style>
 
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
+    <div class="example-wrapper">
+        Afin d'afficher l'ensemble des films
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ 'D:/evalSymfony/Netfleet/src/Controller/FilmController.php'|file_link(0) }}">src/Controller/FilmController.php</a></code></li>
-        <li>Your template at <code><a href="{{ 'D:/evalSymfony/Netfleet/templates/film/index.html.twig'|file_link(0) }}">templates/film/index.html.twig</a></code></li>
-    </ul>
-</div>
+        Cliquez sur ce lien :
+
+        <a id="target" href="{{ path('create') }}" target="_blank">Insérer un film dans la BDD</a>
+    </div>
+    <script>
+        document.getElementById("boo").addEventListener("click",
+            function (event) {
+                // Remove .preventDefault()
+                setTimeout(function() {window.history.back()}, 2000);
+            }
+        );
+    </script>
 {% endblock %}
